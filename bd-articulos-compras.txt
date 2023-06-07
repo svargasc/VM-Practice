@@ -1,0 +1,14 @@
+create table articulos(
+codigo char(10) primary key,
+nombre char(70),
+valor char(20),
+urlImagen char(250),
+detalle char(100)
+);
+
+create table compras(
+codigo_articulo char(10),
+correo char(60)
+);
+
+alter table compras add foreign key(codigo_articulo) references articulos(codigo);
